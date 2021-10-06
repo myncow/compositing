@@ -20,7 +20,6 @@ def permute():
 
 def composite_all_permutations():
     perms=permute()
-    print(perms)
     for count, perm in enumerate(perms):
         with Image(filename=f'layers/layer_1/{perm[0]}') as l1:
             with Image(filename=f'layers/layer_2/{perm[1]}') as l2:
