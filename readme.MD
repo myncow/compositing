@@ -13,5 +13,8 @@ Start by adding the layers in to the `layers/` folders. This program currently s
 
 To generate composites open terminal and type following:
 1. `source venv/bin/activate`
-2. `python3 run.py --mode "permute"` for generating permutations (this will take time with a lot of layers)
+2. `python3 run.py --mode "permute"` for generating permutations (this will take time with a lot of layers) 
 3. Check `output` folder for composited images.
+
+To display a single image, randomly chosen from all permutations:
+1. `python3 run.py --mode "display"`
