@@ -77,9 +77,10 @@ def generate_fpath(n,layer_name):
     return f"layers/layer_{n}/{layer_name}"
 
 
-def process_layer(layer,arr,n,total):
+def process_layer(layer,arr, traits, n,total):
     if arr == None:
         arr=[[] for _ in range(total)]
+        traits=[[] for _ in range(total)]
         ind=[j for j in range(total)]
         random.shuffle(ind)
         for tuple in layer:
@@ -87,6 +88,7 @@ def process_layer(layer,arr,n,total):
             amount=tuple[1]
             for _ in range(amount):
                 rand_i=ind.pop()
+                traits[rand_i].append(layer_name)
                 arr[rand_i].append(f"layers/layer_{n}/{layer_name}.png")
     else:
         ind=[j for j in range(total)]
@@ -96,10 +98,9 @@ def process_layer(layer,arr,n,total):
             amount=tuple[1]
             for _ in range(amount):
                 rand_i=ind.pop()
+                traits[rand_i].append(layer_name)
                 arr[rand_i].append(f"layers/layer_{n}/{layer_name}.png")
-        
-    
-    return arr
+    return arr,traits
 
 def composite(filenames,count):
     with Image(filename=filenames[0]) as l1:
@@ -117,6 +118,33 @@ def composite(filenames,count):
                                     l1.composite(l7)
                                     l1.save(filename=f'output/prob/{count}.png')
 
+def write_metadata(traits,n):
+    f=open('template.json')
+    data=json.load(f)
+    for k,v in traits.items():
+        trait=k
+        if trait=="planet":
+            i=0
+        elif trait=="skin":
+            i=1
+        elif trait=="passenger":
+            i=2
+        elif trait=="fuel":
+            i=3
+        data["attributes"][i]["trait_type"]=trait
+        data["attributes"][i]["value"]=v
+    write_data=json.dumps(data)
+    with open(f"output/prob/{n}.json", "w") as outfile:
+        outfile.write(write_data)
+
+def create_metadata(arr):
+    traits={
+        "planet":arr[0],
+        "skin":arr[4],
+        "passenger":arr[6],
+        "fuel":arr[2]
+    }
+    return traits
 def composite_probabilistically(total=100):
     n_layers=7
     with open("config.json") as f:
@@ -124,15 +152,21 @@ def composite_probabilistically(total=100):
     data=data["Layers"]
     layer_names=list(data.keys())
     data=[extract_parray(data[i]) for i in layer_names]
-
-    filenames=[]
+    
     arr=None
+    traits=None
+
     for i in range(n_layers):
-        arr=process_layer(data[i],arr,i+1,total)
+        arr,traits=process_layer(data[i],arr,traits,i+1,total)
+    
+    # print(traits)
+    # return
+    for t, trait in enumerate(traits):
+        meta=create_metadata(trait)
+        write_metadata(meta,t)
 
     for j,img in enumerate(arr):
         progress(j,total,status=f'compositing {total} images')
-        arr=composite(img,j)
+        composite(img,j)
     
 
-    
