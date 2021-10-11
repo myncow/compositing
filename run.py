@@ -8,7 +8,7 @@ args = parser.parse_args()
 if args.mode == "permute":
     composite_all_permutations()
 elif args.mode == "probabilistic":
-    pass
+    composite_probabilistically()
 elif args.mode == "display":
     display_random()
 else:
