@@ -1,41 +1,20 @@
 {
-    "attributes": [
-      {
-        "trait_type": "planet",
-        "value": ""
-      },
-      {
-        "trait_type": "skin",
-        "value": ""
-      },
-      {
-        "trait_type": "passenger",
-        "value": ""
-      },
-      {
-        "trait_type": "fuel",
-        "value": ""
-      }
-    ],
-    "collection": "WenMoon Club",
-    "description": "Gmrockets ftw.",
-    "image": "",
-    "name": "WM Rocket #",
-    "properties": {
-      "category": "image",
-      "creators": [
-        {
-          "address": "2MUpR2xj5FjzL13NiZa852nzwtNTb1FKVf1ERKSvZKd8",
-          "share": 100
-        }
-      ],
-      "files": [
-        {
-          "type": "image/png",
-          "uri": ""
-        }
-      ]
+  "attributes": [
+    {
+      "trait_type": "planet",
+      "value": ""
     },
-    "seller_fee_basis_points": 100,
-    "symbol": ""
-  }
+    {
+      "trait_type": "rocket",
+      "value": ""
+    },
+    {
+      "trait_type": "astronaut",
+      "value": ""
+    },
+    {
+      "trait_type": "fuel",
+      "value": ""
+    }
+  ]
+}

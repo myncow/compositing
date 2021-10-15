@@ -125,9 +125,9 @@ def write_metadata(traits,n):
         trait=k
         if trait=="planet":
             i=0
-        elif trait=="skin":
+        elif trait=="rocket":
             i=1
-        elif trait=="passenger":
+        elif trait=="astronaut":
             i=2
         elif trait=="fuel":
             i=3
@@ -140,13 +140,13 @@ def write_metadata(traits,n):
 def create_metadata(arr):
     traits={
         "planet":arr[0],
-        "skin":arr[4],
-        "passenger":arr[6],
+        "rocket":arr[4],
+        "astronaut":arr[6],
         "fuel":arr[2]
     }
     return traits
-def composite_probabilistically(total=100):
-    n_layers=7
+def composite_probabilistically(total=500):
+    n_layers=8
     with open("config.json") as f:
         data = json.load(f)
     data=data["Layers"]
@@ -165,7 +165,9 @@ def composite_probabilistically(total=100):
         meta=create_metadata(trait)
         write_metadata(meta,t)
 
+
     for j,img in enumerate(arr):
+        print(img)
         progress(j,total,status=f'compositing {total} images')
         composite(img,j)
     
