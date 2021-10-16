@@ -12,7 +12,7 @@
             "rainbow": 100,
             "saturn": 100,
             "solaura": 100,
-            "sunsets": 50,
+            "sunset": 50,
             "vice": 50
         },
         "layer_2": {
@@ -27,15 +27,6 @@
             "dune": 150
         },
         "layer_3": {
-            "bloom": 100,
-            "cloud": 100,
-            "force": 100,
-            "jet": 150,
-            "richmix": 150,
-            "surge": 150,
-            "tron": 150
-        },
-        "layer_4": {
             "aura": 100,
             "birds": 100,
             "booster": 100,
@@ -48,12 +39,12 @@
             "roseglow": 100,
             "wing": 50
         },
-        "layer_5": {
+        "layer_4": {
             "aura": 100,
             "empty": 800,
             "halo": 100
         },
-        "layer_6": {
+        "layer_5": {
             "artifact": 100,
             "birdman": 50,
             "black": 100,
@@ -71,6 +62,15 @@
             "the_gift": 25,
             "total_recall": 25,
             "yellow":25
+        },
+        "layer_6": {
+            "bloom": 150,
+            "cloud": 150,
+            "force": 100,
+            "jet": 150,
+            "richmix": 150,
+            "surge": 150,
+            "tron": 150
         },
         "layer_7": {
             "mg_1": 140,

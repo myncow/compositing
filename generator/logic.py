@@ -58,7 +58,6 @@ def process_layer(layer,arr, traits, n,total):
 
 # MAIN
 def composite_probabilistically():
-    n_layers=8
     with open("generator/config.json") as f:
         data = json.load(f)
 
@@ -82,14 +81,10 @@ def composite_probabilistically():
     x_rules=[]
     for k,v in exceptions.items():
         x_rules.append(v)
+  
     arr=process_rules_arr(arr,x_rules)
-    #traits=process_rules_traits(traits,x_rules)
+    traits=process_rules_traits(traits,x_rules)
 
-
-
-    # for fn in arr:
-    #     if find_combination(fn,("acc_4","mgg_3")):
-    #         print('found illegal combination')
         
 
     #create metadata
@@ -97,7 +92,8 @@ def composite_probabilistically():
         meta=create_metadata(trait)
         write_metadata(meta,t)
 
-    # #generate images
-    # for j,img in enumerate(arr):
-    #     progress(j,total,status=f'compositing {total} images')
-    #     composite(img,j)
+    #generate images
+    tots=len(arr)
+    for j,img in enumerate(arr):
+        progress(j,tots,status=f'compositing {tots} images')
+        composite(img,j)

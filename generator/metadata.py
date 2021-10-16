@@ -26,8 +26,8 @@ def create_metadata(arr):
     traits={
         "sky": arr[0],
         "planet":arr[1],
-        "rocket":arr[5],
+        "rocket":arr[4],
         "astronaut":arr[7],
-        "fuel":arr[2]
+        "fuel":arr[5]
     }
     return traits
