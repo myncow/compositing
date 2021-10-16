@@ -1,6 +1,10 @@
 {
   "attributes": [
     {
+      "trait_type": "sky",
+      "value": ""
+    },
+    {
       "trait_type": "planet",
       "value": ""
     },

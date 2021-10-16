@@ -4,7 +4,6 @@ import os
 import itertools
 import random
 import sys
-import time
 import json
 
 def progress(count, total, status=''):
@@ -47,13 +46,17 @@ def composite_all_permutations():
                             with Image(filename=filenames[4]) as l5:
                                 with Image(filename=filenames[5]) as l6:
                                     with Image(filename=filenames[6]) as l7:
-                                        l1.composite(l2)
-                                        l1.composite(l3)
-                                        l1.composite(l4)
-                                        l1.composite(l5)
-                                        l1.composite(l6)
-                                        l1.composite(l7)
-                                        l1.save(filename=f'output/permutations/permutation_{count}.png')
+                                        with Image(filename=filenames[7]) as l8:
+                                            with Image(filename=filenames[8]) as l9:
+                                                l1.composite(l2)
+                                                l1.composite(l3)
+                                                l1.composite(l4)
+                                                l1.composite(l5)
+                                                l1.composite(l6)
+                                                l1.composite(l7)
+                                                l1.composite(l8)
+                                                l1.composite(l9)
+                                            l1.save(filename=f'output/perms/{count}.png')
 
 def display_random():
     perms=permute()
@@ -110,13 +113,15 @@ def composite(filenames,count):
                         with Image(filename=filenames[4]) as l5:
                             with Image(filename=filenames[5]) as l6:
                                 with Image(filename=filenames[6]) as l7:
-                                    l1.composite(l2)
-                                    l1.composite(l3)
-                                    l1.composite(l4)
-                                    l1.composite(l5)
-                                    l1.composite(l6)
-                                    l1.composite(l7)
-                                    l1.save(filename=f'output/prob/{count}.png')
+                                    with Image(filename=filenames[7]) as l8:
+                                        l1.composite(l2)
+                                        l1.composite(l3)
+                                        l1.composite(l4)
+                                        l1.composite(l5)
+                                        l1.composite(l6)
+                                        l1.composite(l7)
+                                        l1.composite(l8)
+                                        l1.save(filename=f'output/prob/{count}.png')
 
 def write_metadata(traits,n):
     f=open('template.json')
@@ -145,7 +150,7 @@ def create_metadata(arr):
         "fuel":arr[2]
     }
     return traits
-def composite_probabilistically(total=500):
+def composite_probabilistically(total=550):
     n_layers=8
     with open("config.json") as f:
         data = json.load(f)
@@ -165,9 +170,7 @@ def composite_probabilistically(total=500):
         meta=create_metadata(trait)
         write_metadata(meta,t)
 
-
     for j,img in enumerate(arr):
-        print(img)
         progress(j,total,status=f'compositing {total} images')
         composite(img,j)
     
