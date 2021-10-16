@@ -1,11 +1,12 @@
 import itertools
 def process_rules_arr(filenames,exceptions):
-    rules_arr=[]
-
-    for k,v in exceptions.items():
-        rules_arr.append((k,v))
-    
+    rules_arr=exceptions
+    print(rules_arr)
     res_arr=[]
+
+    for file in filenames:
+        for rule in rules_arr:
+            i
 
     for rule in rules_arr:
         for file in filenames:
@@ -20,11 +21,7 @@ def process_rules_arr(filenames,exceptions):
     return res
 
 def process_rules_traits(filenames,exceptions):
-    rules_arr=[]
-
-    for k,v in exceptions.items():
-        rules_arr.append((k,v))
-    
+    rules_arr=exceptions
     res_arr=[]
 
     for i in rules_arr:
@@ -42,17 +39,14 @@ def process_rules_traits(filenames,exceptions):
 
 def find_combination(filename,rule):
     img1,img2=rule
-    #return true if img1,img_2 in filename
-    c=0
-    for layer in filename:
-        if layer.find(img1) == -1:
-            continue
-        else:
-            c+=1
+    flag1 = False
+    flag2 = False
+    for i in range(len(filename)):
+        if rule[0] in filename[i]:
+            flag1 = True
 
-        if layer.find(img2) == -1:
-            continue
-        else:
-            c+=1
+    for i in range(len(filename)):
+        if rule[0] in filename[i]:
+            flag2=True
     
-    return c==2
+    return (flag1 and flag2)

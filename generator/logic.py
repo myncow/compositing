@@ -79,8 +79,11 @@ def composite_probabilistically():
         arr,traits=process_layer(data[i],arr,traits,i+1,total)
 
     #apply rules 
-    arr=process_rules_arr(arr,exceptions)
-    traits=process_rules_traits(traits,exceptions)
+    x_rules=[]
+    for k,v in exceptions.items():
+        x_rules.append(v)
+    arr=process_rules_arr(arr,x_rules)
+    #traits=process_rules_traits(traits,x_rules)
 
 
 
@@ -94,7 +97,7 @@ def composite_probabilistically():
         meta=create_metadata(trait)
         write_metadata(meta,t)
 
-    #generate images
-    for j,img in enumerate(arr):
-        progress(j,total,status=f'compositing {total} images')
-        composite(img,j)
+    # #generate images
+    # for j,img in enumerate(arr):
+    #     progress(j,total,status=f'compositing {total} images')
+    #     composite(img,j)
