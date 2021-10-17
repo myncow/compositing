@@ -20,5 +20,16 @@
       "trait_type": "fuel",
       "value": ""
     }
-  ]
+  ],
+  "collection": "Wenmoon Club",
+  "description": "Wenmoon? Soon.",
+  "image": "image.png",
+  "name": "Wenmoon Rocket #1",
+  "properties": {
+    "category": "image",
+    "creators": [{ "address": "", "share": 100 }],
+    "files": [{ "type": "image/png", "uri": "image.png" }]
+  },
+  "seller_fee_basis_points": 1000,
+  "symbol": ""
 }

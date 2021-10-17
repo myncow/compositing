@@ -3,6 +3,7 @@ from .composite import composite
 from .metadata import create_metadata, write_metadata
 from .rules import process_rules_arr, process_rules_traits, find_combination
 
+random.seed(123)
 # PROGRESS BAR
 def progress(count, total, status=''):
     bar_len = 60
@@ -40,7 +41,10 @@ def process_layer(layer,arr, traits, n,total):
             layer_name=tuple[0]
             amount=tuple[1]
             for _ in range(amount):
-                rand_i=ind.pop()
+                try:
+                    rand_i=ind.pop()
+                except:
+                    print(layer_name)
                 traits[rand_i].append(layer_name)
                 arr[rand_i].append(f"layers/layer_{n}/{layer_name}.png")
     else:
@@ -50,7 +54,10 @@ def process_layer(layer,arr, traits, n,total):
             layer_name=tuple[0]
             amount=tuple[1]
             for _ in range(amount):
-                rand_i=ind.pop()
+                try:
+                    rand_i=ind.pop()
+                except:
+                    print(layer_name)
                 traits[rand_i].append(layer_name)
                 arr[rand_i].append(f"layers/layer_{n}/{layer_name}.png")
     return arr,traits
@@ -83,17 +90,21 @@ def composite_probabilistically():
         x_rules.append(v)
   
     arr=process_rules_arr(arr,x_rules)
-    traits=process_rules_traits(traits,x_rules)
+    #traits=process_rules_traits(traits,x_rules)
+    print(len(arr))
+            
+    # print(len(arr))
+    # for i in [arr[2],arr[6],arr[12]]:
+    #     print('\n')
+    #     print(i)
 
-        
+    # #create metadata
+    # for t, trait in enumerate(traits):
+    #     meta=create_metadata(trait)
+    #     write_metadata(meta,t)
 
-    #create metadata
-    for t, trait in enumerate(traits):
-        meta=create_metadata(trait)
-        write_metadata(meta,t)
-
-    #generate images
-    tots=len(arr)
-    for j,img in enumerate(arr):
-        progress(j,tots,status=f'compositing {tots} images')
-        composite(img,j)
+    # #generate images
+    # tots=len(arr)
+    # for j,img in enumerate(arr):
+    #     progress(j,tots,status=f'compositing {tots} images')
+    #     composite(img,j)

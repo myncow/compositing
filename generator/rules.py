@@ -1,4 +1,3 @@
-import itertools
 def process_rules_arr(filenames,exceptions):
     rules_arr=exceptions
     res_arr=[]
