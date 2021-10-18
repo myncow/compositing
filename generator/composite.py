@@ -20,12 +20,14 @@ def composite(filenames,count):
                                             l1.composite(l9)
                                             l1.save(filename=f'output/img/{count}.png')
 
+def pil_composite(filenames,j):
+    n=len(filenames)
+    img=PImage.open(filenames[0]).convert('RGBA')
+    for i in range(1,n):
+        new_img=PImage.open(filenames[i]).convert('RGBA')
+        img.alpha_composite(new_img,(0,0),(0,0))
 
-
-
-
-
-
+    img.save(f"quality_test/pillow_{j}.png")
 
 
 

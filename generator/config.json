@@ -1,157 +1,55 @@
 {
-    "total": 80000,
+    "total": 10000,
     "n_layers": 9,
     "Layers": {
         "layer_1": {
-            "cloudscape": 12000,
-            "firenight": 8000,
-            "hokusai": 6000,
-            "milkyway": 16000,
-            "moonrise": 4000,
-            "moonshine": 8000,
-            "rainbow": 2000,
-            "saturn": 8000,
-            "solaura": 1000,
-            "sunset": 10000,
-            "vice": 5000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         },
         "layer_2": {
-            "atlantis": 9000,
-            "egypt": 9000,
-            "fujeeee": 8000,
-            "fuji": 10000,
-            "highlands": 15000,
-            "inception": 11000,
-            "odyssey": 2000,
-            "ulysses": 1000,
-            "dune": 15000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         },
         "layer_3": {
-            "aura": 6000,
-            "birds": 4000,
-            "booster": 6000,
-            "empty": 30000,
-            "glide": 4000,
-            "gloria": 1000,
-            "halo": 2000,
-            "phoenix": 7000,
-            "rooster": 6000,
-            "roseglow": 7000,
-            "wing": 7000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         },
         "layer_4": {
-            "aura": 5000,
-            "empty": 70000,
-            "halo": 5000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         },
         "layer_5": {
-            "artifact": 12000,
-            "birdman": 2000,
-            "black": 3000,
-            "blue": 3000,
-            "buran": 8000,
-            "foxy": 2000,
-            "hera": 2000,
-            "jackson": 8000,
-            "mary": 2000,
-            "pollock": 8000,
-            "prototype": 14000,
-            "red": 3000,
-            "shuttle": 8000,
-            "solcrystal": 1000,
-            "the_gift": 500,
-            "total_recall": 500,
-            "yellow":3000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         },
         "layer_6": {
-            "bloom": 15000,
-            "cloud": 15000,
-            "force": 4000,
-            "jet": 12000,
-            "richmix": 12000,
-            "surge": 10000,
-            "tron": 12000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         },
         "layer_7": {
-            "mg_1": 12000,
-            "mg_2": 12000,
-            "mg_3": 12000,
-            "mg_4": 12000,
-            "mg_5": 12000,
-            "mg_6": 10000,
-            "mg_7": 10000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         },
         "layer_8": {
-            "apollo": 12000,
-            "deep_blue": 5000,
-            "ET": 10000,
-            "gemini": 12000,
-            "kutourufu": 2500,
-            "mars": 12000,
-            "mercury": 12000,
-            "spaceslug": 2000,
-            "thugbirdz": 500,
-            "venus": 12000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         },
         "layer_9":{
-            "fg_1": 12000,
-            "fg_2": 12000,
-            "fg_3": 12000,
-            "fg_4": 12000,
-            "fg_5": 12000,
-            "fg_6": 10000,
-            "fg_7": 10000
+            "item_1": 5000,
+            "item_2": 2500,
+            "item_3": 2500
         }
     },
     "exceptions": {
-        "rule_1": ["mg_1","fg_2"],
-        "rule_2": ["mg_1","fg_3"],
-        "rule_3": ["mg_1","fg_4"],
-        "rule_4": ["mg_1","fg_5"],
-        "rule_5": ["mg_1","fg_6"],
-        "rule_6": ["mg_1","fg_7"],
-
-        "rule_7": ["mg_2","fg_1"],
-        "rule_8": ["mg_2","fg_3"],
-        "rule_9": ["mg_2","fg_4"],
-        "rule_10": ["mg_2","fg_5"],
-        "rule_11": ["mg_2","fg_6"],
-        "rule_12": ["mg_2","fg_7"],
-
-        "rule_13": ["mg_3","fg_2"],
-        "rule_14": ["mg_3","fg_1"],
-        "rule_15": ["mg_3","fg_4"],
-        "rule_16": ["mg_3","fg_5"],
-        "rule_17": ["mg_3","fg_6"],
-        "rule_18": ["mg_3","fg_7"],
-
-        "rule_19": ["mg_4","fg_2"],
-        "rule_20": ["mg_4","fg_3"],
-        "rule_21": ["mg_4","fg_1"],
-        "rule_22": ["mg_4","fg_5"],
-        "rule_23": ["mg_4","fg_6"],
-        "rule_24": ["mg_4","fg_7"],
-
-        "rule_25": ["mg_5","fg_2"],
-        "rule_26": ["mg_5","fg_1"],
-        "rule_27": ["mg_5","fg_4"],
-        "rule_28": ["mg_5","fg_3"],
-        "rule_29": ["mg_5","fg_6"],
-        "rule_30": ["mg_5","fg_7"],
-
-        "rule_31": ["mg_6","fg_2"],
-        "rule_32": ["mg_6","fg_1"],
-        "rule_33": ["mg_6","fg_4"],
-        "rule_34": ["mg_6","fg_5"],
-        "rule_35": ["mg_6","fg_3"],
-        "rule_36": ["mg_6","fg_7"],
-
-        "rule_37": ["mg_7","fg_2"],
-        "rule_38": ["mg_7","fg_1"],
-        "rule_39": ["mg_7","fg_4"],
-        "rule_40": ["mg_7","fg_5"],
-        "rule_41": ["mg_7","fg_6"],
-        "rule_42": ["mg_7","fg_3"]
-
+        "rule_1": ["background_1","character_4","character_6"],
+        "rule_2": ["item_2","item_4"]
     }
 }

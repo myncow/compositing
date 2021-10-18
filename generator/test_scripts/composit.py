@@ -1,4 +1,5 @@
 from wand.image import Image
+from PIL import Image as PImage
 from wand.display import display
 import os
 import itertools
